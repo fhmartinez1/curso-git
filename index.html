@@ -24,6 +24,37 @@
 				<li><strong>git init</strong> inicializa el repositorio de git</li>
 				<li><strong>rm -rf .git</strong> elimina el repositorio</li>
 			</ul>
+			<h3>Staging Area (INDEX)</h3>
+			<p>
+				El area de control de cambios es aquella donde se realiza el seguimiento de los archivos y permite la comparacion del directorio de trabajo (Working Directory) con los commits almacenados en el historial de cambios. Cuando agregamos un archivo al index, se realiza la captura del codigo (Snapshot) y luego debemos confirmar si vamos a utilizarla o agregar mas modificaciones.
+			</p>
+			<ul class="commands">
+				<li><strong>git status</strong> muestra al usuario el estado de los diferentes archivos que se encuentran en la carpeta del proyecto, dentro de los valores que podemos encontrar estan: 
+					<ul>
+						<li>untracked: no se esta haciendo seguimieto, irrecuperable en caso de perdida.</li>
+						<li>staged: se realizo la captura, pero todavia no se confirmaron los cambios.</li>
+						<li>commited: los cambios fueron registrados en el historial mediante un commit.</li>
+						<li>modified: el archivo difiere con la ultima captura realizada, se esta haciendo seguimiento.</li>
+					</ul>
+				</li>
+				<li><strong>git add &lt;file></strong> agrega el archivo al index.</li>
+				<li><strong>git diff</strong> muestra las diferencias entre el working directoy y la ultima confirmacion.</li>
+				<li><strong>git restore --staged &lt;file></strong> quita la captura realizada del index.</li>
+				<li><strong>git rm --catch &lt;file></strong> remueve el archivo del area de control, deja de hacer seguimiento.</li>
+			</ul>
+		</article>
+		<article>
+			<h3>Repository</h3>
+			<p>
+				Corresponde al area donde se almacenan las confirmaciones de cambio en formato BLOB (Binary Large Object File). Una vez realizadas, creamos un punto de control al que podemos volver en cualquier momento. Esto commits se utilizan como referentes para navegar dentro del historial.
+			</p>
+			<ul class="commands">
+				<li><strong>git commit</strong> abre el editor para realizar una confirmacion.</li>
+				<li><strong>git log</strong> muestra el historial de confirmaciones</li>
+				<li><strong>git blame &lt;file></strong> muestra los datos del autor que edito el archivo linea por linea.</li>
+				<li><strong>git push -u &lt;remote> &lt;branch></strong> agrega al repositorio remoto la rama seleccionada.</li>
+				<li><strong>git fetch &lt;remote></strong> captura la historia del repositorio remoto para obtener los cambios.</li>
+			</ul>
 		</article>
 	</section>
 </body>
